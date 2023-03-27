@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    /* 
+      
+      获取指定时间的 字符串
+      
+      */
+    function getCertainDay(time) {
+      let date = new Date(time);
+      // 2020-12-19
+      let year = date.getFullYear(); // 2020
+      let month =
+        date.getMonth() + 1 >= 10
+          ? date.getMonth() + 1
+          : "0" + (date.getMonth() + 1); // 11 9
+      let day = date.getDate() >= 10 ? date.getDate() : "0" + date.getDate();
+      return year + "-" + month + "-" + day; // 2020-09-19
+    }
+
+    let date = new Date();
+    let dateString = getCertainDay(date.getTime()); //
+    console.log(dateString);
+    // 2020-12-20
+    // 24*60*60*1000 24 24小时 60 60分钟 60 60秒 1000 1000 毫秒
+    console.log(date.getTime() - 24 * 60 * 60 * 1000);
+    // 2020-12-20
+    // let yesterday = getCertainDay(date.getTime()-24*60*60*1000);
+    // console.log(yesterday);
+    // 2020-12-19
+    let yesterday = getCertainDay(date.getTime() - 2 * 24 * 60 * 60 * 1000);
+    console.log(yesterday);
+    let servernDays = [];
+    for (let i = 6; i >= 0; i--) {
+      let dateString = getCertainDay(date.getTime() - i * 24 * 60 * 60 * 1000);
+      servernDays.push(dateString);
+    }
+    console.log(servernDays);
+  </script>
+</html>

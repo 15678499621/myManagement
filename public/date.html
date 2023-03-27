@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let date = new Date();
+    // 2020-12-19
+    let year = date.getFullYear(); // 2020
+    let month =
+      date.getMonth() + 1 >= 10
+        ? date.getMonth() + 1
+        : "0" + (date.getMonth() + 1); // 11 9
+    let day = date.getDate() >= 10 ? date.getDate() : "0" + date.getDate();
+    console.log(year + "-" + month + "-" + day); // 2020-09-19
+  </script>
+</html>
