@@ -73,6 +73,7 @@ export default {
   methods: {
     handleLogin: function (loginForm) {
       console.log("提交信息");
+       this.$router.push("dashboard");
       this.$refs[loginForm].validate(async (valid) => {
         if (valid) {
           // 发请求 拿数据

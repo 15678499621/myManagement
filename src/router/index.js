@@ -81,6 +81,24 @@ const routes = [
           { name: "商家列表", to: "" },
         ],
       },
+      {
+        path: "/foodlist",
+        component: () => import("../components/Foodlist"),
+        meta: [
+          { name: "首页", to: "/dashboard" },
+          { name: "数据管理", to: "" },
+          { name: "商家列表", to: "" },
+        ],
+      },
+      {
+        path: "/orderlist",
+        component: () => import("../components/Orderlist"),
+        meta: [
+          { name: "首页", to: "/dashboard" },
+          { name: "数据管理", to: "" },
+          { name: "商家列表", to: "" },
+        ],
+      },
     ],
   },
 ];
@@ -88,14 +106,14 @@ const routes = [
 const router = new VueRouter({
   routes,
 });
-router.beforeEach(function (to, from, next) {
-  console.log("全局前置导航守卫");
-  let is_login = localStorage.getItem("is_login"); //从localStorage本地取值，如果有允许跳转，否则留在原页面
-  if (is_login || to.path === "/") {
-    next();
-  } else {
-    next("/"); // 否则情况下跳转登陆页面
-  }
-});
+// router.beforeEach(function (to, from, next) {
+//   console.log("全局前置导航守卫");
+//   let is_login = localStorage.getItem("is_login"); //从localStorage本地取值，如果有允许跳转，否则留在原页面
+//   if (is_login || to.path === "/") {
+//     next();
+//   } else {
+//     next("/"); // 否则情况下跳转登陆页面
+//   }
+// });
 
 export default router;
