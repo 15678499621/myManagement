@@ -1,0 +1,11 @@
+.drag {
+    width: 600px;
+    /* height: 30px; */
+    position: absolute;
+    top: 580px;
+    left: 500px;
+    padding: 10px;
+    border-radius: 2px;
+    padding: 4px;
+    position: fixed;
+  }

@@ -13,6 +13,7 @@
         :current-page="currentPage"
       ></common-table>
     </div>
+    <div class="box" style="position: fixed;"  v-drag>可以拖拽</div>
   </div>
 </template>
 
@@ -109,5 +110,10 @@ export default {
 .myadmin-userlist {
   height: 100%;
   overflow-y: scroll;
+}
+.box{
+  width: 100px;
+  height: 100px;
+  background: yellow;
 }
 </style>

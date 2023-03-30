@@ -2,7 +2,9 @@
 <template>
   <div class="myadmin-login">
     <h1>后台管理系统</h1>
-    <div class="myadmin-login-form">
+    <div >
+    <div class="myadmin-login-form" style="position: fixed;" v-drag>
+   
       <el-form :model="form" ref="loginForm" :rules="rules">
         <el-form-item label="" prop="username">
           <el-input v-model="form.username" placeholder="用户名"></el-input>
@@ -28,7 +30,11 @@
         <p>未登录过的新用户，自动注册</p>
         <p>注册过的用户可凭账号密码登录</p>
       </div>
-    </div>
+  
+  </div>
+</div>
+     
+
   </div>
 </template>
 
@@ -37,9 +43,12 @@
 //例如：import 《组件名称》 from '《组件路径》';
 import { login } from "@/api/api";
 import axios from "axios";
+
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: {},
+ 
+  
   data() {
     //这里存放数据
     return {
@@ -148,6 +157,7 @@ export default {
     background-color: white;
     width: 300px;
     height: 300px;
+    left:calc(50% - 150px);
     .login-button {
       width: 100%;
     }
@@ -157,4 +167,5 @@ export default {
     }
   }
 }
+
 </style>

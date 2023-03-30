@@ -1,7 +1,7 @@
 <!-- 通用的表格 -->
 <template>
   <div class="myadmin-common-table">
-    <el-table :data="data" height="300">
+    <el-table :data="data" height="300" v-dialogDrag>
       <el-table-column
         v-for="col in columns"
         :prop="col.id"
